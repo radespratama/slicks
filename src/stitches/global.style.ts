@@ -8,9 +8,13 @@ const GlobalStyle = globalCss({
     scrollBehavior: "smooth",
     "-webkit-font-smoothing": "antialiased",
     "-moz-osx-font-smoothing": "grayscale",
+    fontFamily: "$sans",
+  },
+  "@font-face": {
+    fontFamily: "Cascadia Code",
+    src: "url('/fonts/CascadiaCode.woff2') format('woff2')",
   },
   "html, body": {
-    fontFamily: "$sans",
     backgroundColor: "$primary",
     color: "$white-950",
   },
