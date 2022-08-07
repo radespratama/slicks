@@ -10,6 +10,7 @@ export const { globalCss, createTheme, styled, keyframes, getCssText } =
         ...Colors.Gray,
         ...Colors.Blue,
         ...Colors.Red,
+        ...Colors.Yellow,
       },
       fonts: {
         sans: "Outfit, sans-serif",

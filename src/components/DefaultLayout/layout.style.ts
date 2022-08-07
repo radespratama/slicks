@@ -9,6 +9,11 @@ export const LayoutContainer = styled("div", {
 
   backgroundColor: "$gray-900",
   borderRadius: 10,
-  display: "flex",
+  display: "none",
   flexDirection: "column",
+  overflow: "hidden",
+
+  "@md": {
+    display: "flex",
+  }
 });

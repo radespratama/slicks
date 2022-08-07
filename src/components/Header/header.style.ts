@@ -29,6 +29,7 @@ export const Nav = styled("nav", {
     color: "$gray-100",
     border: "2px solid transparent",
     transition: "0.2s",
+    outline: "none",
 
     "&:hover": {
       border: "2px solid $blue-500",
