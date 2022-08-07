@@ -39,7 +39,7 @@ const initialValue: CyclesState = { cycles: [], activeCycleId: null };
 
 function init(initialValue: CyclesState) {
   const storedStateAsJSON = localStorage.getItem(
-    "@ignite-timer:cycles-state-1.0.0"
+    "@slicks:cycles-state-1.0.0"
   );
   if (storedStateAsJSON) {
     return JSON.parse(storedStateAsJSON);
@@ -66,7 +66,7 @@ export function CyclesContextProvider({
   useEffect(() => {
     const stateJSON = JSON.stringify(cyclesState);
     if (cyclesState.cycles.length !== 0) {
-      localStorage.setItem("@ignite-timer:cycles-state-1.0.0", stateJSON);
+      localStorage.setItem("@slicks:cycles-state-1.0.0", stateJSON);
     }
   }, [cyclesState]);
 

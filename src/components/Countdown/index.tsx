@@ -26,7 +26,7 @@ export default function Countdown() {
     if (activeCycle) {
       document.title = `${activeCycle.task} | ${minutes}:${seconds}`;
     } else {
-      document.title = "Slick - Pomodoro App";
+      document.title = "Slicks - Pomodoro App";
     }
   }, [activeCycle, minutes, seconds]);
 
