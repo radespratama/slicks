@@ -13,6 +13,7 @@ export const { globalCss, createTheme, styled, keyframes, getCssText } =
       },
       fonts: {
         sans: "Outfit, sans-serif",
+        mono: "Roboto Mono, monospace",
       },
       fontSizes: {
         "text-xs": "0.75rem",

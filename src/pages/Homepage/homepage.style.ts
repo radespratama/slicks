@@ -16,6 +16,7 @@ export const Form = styled("form", {
 });
 
 const BaseCountdownButton = styled("button", {
+  fontFamily: "$sans",
   width: "100%",
   border: 0,
   padding: "1rem",

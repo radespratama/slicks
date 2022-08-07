@@ -20,21 +20,20 @@ export const Nav = styled("nav", {
   gap: "0.5rem",
 
   a: {
+    width: "2.875rem",
+    height: "2.875rem",
     display: "flex",
+    borderRadius: 8,
     alignItems: "center",
-    padding: "0.5rem",
     justifyContent: "center",
     color: "$gray-100",
-    borderTop: "3px solid transparent",
-    borderBottom: "3px solid transparent",
-    transition: "all 0.2s ease-in-out",
-
-    "&:hover": {
-      borderBottom: "3px solid $blue-500",
-    },
+    borderTop: "2px solid transparent",
+    borderBottom: "2px solid transparent",
+    transition: "all 0.2s",
 
     "&.active": {
       color: "$blue-500",
+      border: "2px solid $blue-500",
     },
   },
 });

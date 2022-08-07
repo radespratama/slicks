@@ -1,13 +1,13 @@
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { CyclesContextProvider } from "./libs/context/CyclesContext";
 import Router from "./router";
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <CyclesContextProvider>
         <Router />
       </CyclesContextProvider>
-    </HashRouter>
+    </BrowserRouter>
   );
 }

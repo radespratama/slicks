@@ -1,6 +1,7 @@
 import { styled } from "../../stitches/theme.config";
 
 export const CountdownContainer = styled("div", {
+  fontFamily: "$mono",
   fontSize: "10rem",
   lineHeight: "8rem",
   color: "$gray-100",

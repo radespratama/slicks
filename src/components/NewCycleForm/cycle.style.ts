@@ -13,6 +13,7 @@ export const FormContainer = styled("div", {
 });
 
 const BaseInput = styled("input", {
+  fontFamily: "$sans",
   backgroundColor: "transparent",
   outline: "none",
   height: "2.5rem",
