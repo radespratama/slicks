@@ -7,7 +7,7 @@ import * as I from "./header.style";
 export default function Header() {
   return (
     <I.HeaderContainer>
-      <SlickIcon />
+      <SlickIcon className="sizes" />
       <I.Nav>
         <NavLink to="/" title="Timer">
           <Timer size={24} />

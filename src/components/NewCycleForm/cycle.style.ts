@@ -12,11 +12,12 @@ export const FormContainer = styled("div", {
   flexWrap: "wrap",
 });
 
-export const BaseInput = styled("input", {
+const BaseInput = styled("input", {
   backgroundColor: "transparent",
+  outline: "none",
   height: "2.5rem",
   border: 0,
-  borderBottom: "2px solid $gray-400",
+  borderBottom: "2px solid $gray-500",
   fontWeight: "bold",
   fontSize: "$text-lg",
   padding: "0 0.5rem",
@@ -24,7 +25,7 @@ export const BaseInput = styled("input", {
 
   "&:focus": {
     boxShadow: "none",
-    borderColor: "$midnight-blue-800",
+    borderColor: "$blue-500",
   },
 
   "&::placeholder": {
@@ -40,5 +41,5 @@ export const TaskInput = styled(BaseInput, {
 });
 
 export const MinutesAmountInput = styled(BaseInput, {
-  minWidth: "4rem",
+  maxWidth: "4rem",
 });

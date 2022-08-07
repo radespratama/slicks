@@ -8,11 +8,11 @@ export const { globalCss, createTheme, styled, keyframes, getCssText } =
         primary: "#111111",
         ...Colors.White,
         ...Colors.Gray,
-        ...Colors.MidnightBlue,
+        ...Colors.Blue,
+        ...Colors.Red,
       },
       fonts: {
         sans: "Outfit, sans-serif",
-        mono: "Cascadia Code",
       },
       fontSizes: {
         "text-xs": "0.75rem",
@@ -31,6 +31,7 @@ export const { globalCss, createTheme, styled, keyframes, getCssText } =
         sm: "640px",
         md: "768px",
         lg: "992px",
+        xl: "1100px",
       },
     },
     media: {

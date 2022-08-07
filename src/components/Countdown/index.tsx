@@ -1,19 +1,21 @@
-import { useEffect, useContext } from "react";
+import { useContext, useEffect } from "react";
 import { differenceInSeconds } from "date-fns/esm";
-import { TimesContext } from "../../libs/context/TimeContext";
+import { CyclesContext } from "../../libs/context/CyclesContext";
 
 import * as I from "./count.style";
 
-export function Countdown() {
+export default function Countdown() {
   const {
-    amountSecondPassed,
-    setSecondPassed,
-    activeTime,
-    markCurrentTimeAsFinished,
-  } = useContext(TimesContext);
+    amountSecondsPassed,
+    setSecondsPassed,
+    activeCycle,
+    markCurrentCycleAsFinished,
+  } = useContext(CyclesContext);
 
-  const totalSeconds = activeTime ? activeTime.minutesAmount * 60 : 0;
-  const currentSeconds = activeTime ? totalSeconds - amountSecondPassed : 0;
+  const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0;
+
+  const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0;
+
   const minutesAmount = Math.floor(currentSeconds / 60);
   const secondsAmount = currentSeconds % 60;
 
@@ -21,41 +23,42 @@ export function Countdown() {
   const seconds = String(secondsAmount).padStart(2, "0");
 
   useEffect(() => {
-    if (activeTime) {
-      document.title = `Slick - ${activeTime.task} | ${minutes}:${seconds}`;
+    if (activeCycle) {
+      document.title = `${activeCycle.task} | ${minutes}:${seconds}`;
     } else {
       document.title = "Slick - Pomodoro App";
     }
-  }, [activeTime, minutes, seconds]);
+  }, [activeCycle, minutes, seconds]);
 
   useEffect(() => {
     let interval: any;
-    if (activeTime) {
+    if (activeCycle) {
       interval = setInterval(() => {
         const secondsDifference = differenceInSeconds(
           new Date(),
-          new Date(activeTime.startDate)
+          new Date(activeCycle.startDate)
         );
 
         if (secondsDifference >= totalSeconds) {
-          markCurrentTimeAsFinished();
+          markCurrentCycleAsFinished();
           clearInterval(interval);
         } else {
-          setSecondPassed(secondsDifference);
+          setSecondsPassed(secondsDifference);
         }
       }, 1000);
     }
-
-    return () => clearInterval(interval);
-  }, [activeTime, totalSeconds, markCurrentTimeAsFinished, setSecondPassed]);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [activeCycle, totalSeconds, markCurrentCycleAsFinished, setSecondsPassed]);
 
   return (
     <I.CountdownContainer>
-      <I.CountdownValue>{minutes[0]}</I.CountdownValue>
-      <I.CountdownValue>{minutes[1]}</I.CountdownValue>
+      <I.SpanText>{minutes[0]}</I.SpanText>
+      <I.SpanText>{minutes[1]}</I.SpanText>
       <I.Seperator>:</I.Seperator>
-      <I.CountdownValue>{seconds[0]}</I.CountdownValue>
-      <I.CountdownValue>{seconds[1]}</I.CountdownValue>
+      <I.SpanText>{seconds[0]}</I.SpanText>
+      <I.SpanText>{seconds[1]}</I.SpanText>
     </I.CountdownContainer>
   );
 }

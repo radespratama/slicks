@@ -9,6 +9,7 @@ const GlobalStyle = globalCss({
     "-webkit-font-smoothing": "antialiased",
     "-moz-osx-font-smoothing": "grayscale",
     fontFamily: "$sans",
+    userSelect: "none",
   },
   "@font-face": {
     fontFamily: "Cascadia Code",

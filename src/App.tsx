@@ -1,14 +1,13 @@
-import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import History from "./pages/History";
+import { HashRouter } from "react-router-dom";
+import { CyclesContextProvider } from "./libs/context/CyclesContext";
+import Router from "./router";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/history" element={<History />} />
-      </Switch>
-    </BrowserRouter>
+    <HashRouter>
+      <CyclesContextProvider>
+        <Router />
+      </CyclesContextProvider>
+    </HashRouter>
   );
 }
