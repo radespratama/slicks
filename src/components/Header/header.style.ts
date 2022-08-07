@@ -27,9 +27,12 @@ export const Nav = styled("nav", {
     alignItems: "center",
     justifyContent: "center",
     color: "$gray-100",
-    borderTop: "2px solid transparent",
-    borderBottom: "2px solid transparent",
-    transition: "all 0.2s",
+    border: "2px solid transparent",
+    transition: "0.2s",
+
+    "&:hover": {
+      border: "2px solid $blue-500",
+    },
 
     "&.active": {
       color: "$blue-500",
